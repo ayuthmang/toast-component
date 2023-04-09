@@ -10,7 +10,7 @@ const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
 function ToastPlayground() {
   const [message, setMessage] = useState('')
-  const [variant, setVariant] = useState('notice')
+  const [variant, setVariant] = useState(VARIANT_OPTIONS[0])
   const [showToast, setShowToast] = useState(false)
   const { createToast } = React.useContext(ToastContext)
 
