@@ -3,16 +3,26 @@ import React, { useState } from 'react';
 import Button from '../Button';
 
 import styles from './ToastPlayground.module.css';
+import Toast from '../Toast/Toast';
 
 const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
 function ToastPlayground() {
   const [message, setMessage] = useState('')
   const [variant, setVariant] = useState('notice')
+  const [showToast, setShowToast] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
     console.log({message, variant})
+  }
+
+  function handlePopToast() {
+    setShowToast(true)
+  }
+
+  function handleToastClose() {
+    setShowToast(false)
   }
 
   return (
@@ -69,10 +79,16 @@ function ToastPlayground() {
         <div className={styles.row}>
           <div className={styles.label} />
           <div className={`${styles.inputWrapper} ${styles.radioWrapper}`}>
-            <Button>Pop Toast!</Button>
+            <Button onClick={handlePopToast}>Pop Toast!</Button>
           </div>
         </div>
       </form>
+
+      {showToast && (
+        <Toast variant={variant} onClose={handleToastClose}>
+          {message}
+        </Toast>
+      )}
     </div>
   )
 }
