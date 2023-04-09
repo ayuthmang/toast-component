@@ -3,6 +3,7 @@ import React from "react";
 export const ToastContext = React.createContext();
 
 function ToastProvider({ children }) {
+  console.log('ToastProvider')
   const [toasts, setToasts] = React.useState([])
 
   function createToast(message, variant) {

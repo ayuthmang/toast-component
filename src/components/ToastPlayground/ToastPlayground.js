@@ -12,7 +12,7 @@ function ToastPlayground() {
   const [message, setMessage] = useState('')
   const [variant, setVariant] = useState('notice')
   const [showToast, setShowToast] = useState(false)
-  const { toasts, createToast } = React.useContext(ToastContext)
+  const { createToast } = React.useContext(ToastContext)
 
   function handleSubmit(e) {
     e.preventDefault()
