@@ -3,7 +3,7 @@ import React from 'react';
 import Toast from '../Toast';
 import styles from './ToastShelf.module.css';
 import { ToastContext } from '../ToastProvider/ToastProvider';
-import useEscapeKey from '../use-escape-key';
+import useEscapeKey from '../../hooks/use-escape-key';
 
 function ToastShelf() {
   console.log('ToastShelf renders')
