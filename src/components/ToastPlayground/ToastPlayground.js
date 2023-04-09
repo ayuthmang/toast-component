@@ -17,12 +17,10 @@ function ToastPlayground() {
   function handleSubmit(e) {
     e.preventDefault()
 
-    if (message === '') {
-      return
-    }
-
     createToast(message, variant)
     setShowToast(true)
+    setMessage('')
+    setVariant(VARIANT_OPTIONS[0])
   }
 
   return (
