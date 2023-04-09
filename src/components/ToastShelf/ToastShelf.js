@@ -12,14 +12,16 @@ function ToastShelf() {
   const handleEscape = React.useCallback(() => {
     dismissAllToasts()
   }, [dismissAllToasts])
-  // const handleEscape = () => {
-  //   dismissAllToasts()
-  // }
 
   useEscapeKey(handleEscape)
 
   return (
-    <ol className={styles.wrapper}>
+    <ol
+      className={styles.wrapper}
+      role="region"
+      aria-live="polite"
+      aria-label="Notifications"
+    >
       {toasts.map(({ id, variant, message }) => {
         return (
           <li key={id} className={styles.toastWrapper}>
